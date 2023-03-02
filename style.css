@@ -50,8 +50,10 @@ justify-content: space-between;
   border-radius: 5px;
   padding: 0 20px 0 53px;
   border: 1px solid #999;
+  text-align: left;
 }
 .task-input textarea{
+    text-align: left;
     height: 100%;
     width: 100%;
     outline: none;
@@ -60,10 +62,20 @@ justify-content: space-between;
     padding: 0 20px 0 53px;
     border: 1px solid #999;
     background-color: #94b3ca;
+
   }
-.controls div ul li{
+#todo-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+ }
+ul #title{
+    color: aqua;
+    font-size: large;
+    font-weight: bold;
+}
+ #desc{
+    color :azure;
+    font-size: smaller;
 }
 .filters {
 display:flex;
@@ -142,6 +154,10 @@ color: #fff;;
 
 
 @media (max-width: 400px) {
+    h1{
+        margin-top: 50px;
+        font-size: 200% ;
+    }
   body{
     padding: 0 10px;
   }

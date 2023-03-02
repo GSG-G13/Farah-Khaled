@@ -29,8 +29,7 @@ body{
 }
 .wrapper{
 display : flex;
-flex-direction: row;
-justify-content: space-between;
+flex-direction: column;
   max-width: 405px;
   padding: 28px 0 30px;
   margin: 10%;
@@ -67,13 +66,22 @@ justify-content: space-between;
 #todo-list {
     display: flex;
     flex-direction: column; 
+    margin-top: 100px;
  }
-ul #title{
+#todo-list li {
+    background-color: #999;
+    margin-bottom: 10px;
+    border-radius: 8px;
+ 
+ }
+.title{
+    display: block;
     color: aqua;
     font-size: large;
     font-weight: bold;
 }
- #desc{
+ .desc{
+    display: block;
     color :azure;
     font-size: smaller;
 }

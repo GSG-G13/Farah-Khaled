@@ -14,8 +14,8 @@
     <div class="wrapper">
       <div class="task-input">
         <form >
-        <input type="text" placeholder="Add a new task title">
-        <textarea  cols="80" rows="8" placeholder="add some description..."></textarea>
+        <input id="titleInput"type="text" placeholder="Add a new task title">
+        <textarea  id="description" cols="80" rows="8" placeholder="add some description..."></textarea>
         <input type="datetime-local">
         <button class="button" type="button">Add</button>
      </form>
@@ -26,13 +26,12 @@
           <span id="completed"> Completed</span>
         </div>
       </div>
-        <ul>
-          <li class="title" placeholder="TASK 1"></ul>
-          <li class="time"></li>
-          <span> <button class="button" type="button">Edit</button>
-           <button class="button" type="button">Delete</button>
+        <ul id="todo-list">
+          <li>
+            <span id="title">
+
           </span>
-       <li class="task-box" placeholder="TASK 1"></li>
+        <span id="desc"> </span>
      </ul>
     </div>
     <script src="app.js"></script>

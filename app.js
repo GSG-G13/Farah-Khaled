@@ -2,7 +2,7 @@ const form = document.querySelector('form');
 const title = document.querySelector('#titleInput');
 const description = document.querySelector('#description');
 
-const list = document.querySelector('#todo-list')
+const list = document.querySelector('.todo-list')
 
 
 
@@ -12,6 +12,7 @@ console.log(savedList)
 // render items 
 
 function render(){
+    list.innerHTML = '';
 
     savedList.forEach((item) =>{
         let li = document.createElement('li');
@@ -29,7 +30,7 @@ function render(){
     })
 }
 
-// render();
+ render();
 
 
 

@@ -61,7 +61,7 @@ justify-content: space-between;
     border: 1px solid #999;
     background-color: #94b3ca;
   }
-.controls div ul{
+.controls div ul li{
     display: flex;
     flex-direction: column;
 }
@@ -86,10 +86,10 @@ color: #fff;;
   display: flex;
   font-family:'Poppins' ,sans-serif;
   font-size: 16px;
-  height: 30px;
+  height: 20px;
+  width: min-content;
   justify-content: center;
   line-height: 20px;
-  max-width: 80%;
   position: relative;
   text-align: center;
   touch-action: manipulation;
@@ -100,7 +100,8 @@ color: #fff;;
   border-radius: 8px;
   content: "";
   display: block;
-  height: 30px;
+  height: 20px;
+  width: min-content;
   left: 0;
   width: 100%;
   position: absolute;
@@ -145,15 +146,22 @@ color: #fff;;
     padding: 0 10px;
   }
   .wrapper {
+    display: flex;
+    flex-direction: column;
     padding: 20px 0;
   }
   .filters span{
+    display: flex;
+    flex-direction: column;
     margin: 0 5px;
   }
   .task-input{
     padding: 0 20px;
   }
-  .controls{
+  .controls div ul span{
+    margin-top: 90%;
+    display: flex;
+    flex-direction: row;
     padding: 18px 20px;
   }
   .task-box{

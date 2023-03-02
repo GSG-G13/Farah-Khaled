@@ -2,7 +2,9 @@ const form = document.querySelector('form');
 const title = document.querySelector('#titleInput');
 const description = document.querySelector('#description');
 
-const list = document.querySelector('.todo-list')
+const container = document.querySelector('.container')
+
+const list = document.querySelector('#todo-list')
 
 
 
@@ -12,19 +14,29 @@ console.log(savedList)
 // render items 
 
 function render(){
+    
     list.innerHTML = '';
 
     savedList.forEach((item) =>{
         let li = document.createElement('li');
         let spanTitle = document.createElement('span');
-        let spanDesc = document.createElement('span');
-
-        spanTitle.innerHTML = item.title;
         spanTitle.classList.add('title');
-        spanDesc.innerHTML = item.description;
+        let spanDesc = document.createElement('span');
         spanDesc.classList.add('desc')
+        spanTitle.innerHTML = item.title;
+        
+        let deleteSpan = document.createElement('i');
+        deleteSpan.classList.add('fa')
+        deleteSpan.classList.add('fa-trash')
+
+        
+        spanDesc.innerHTML = item.description;
+        
         li.appendChild(spanTitle);
         li.appendChild(spanDesc);
+        li.appendChild(deleteSpan);
+
+        deleteSpan.addEventListener("click", () => deleteTask(item.id))
 
         list.appendChild(li)
     })
@@ -55,7 +67,6 @@ form.addEventListener('submit', event => {
     
     form.reset();
 
-    render();
 
 
 });
@@ -63,10 +74,18 @@ form.addEventListener('submit', event => {
 const addTodo = (item) => {
     savedList.push(item);
     localStorage.setItem('todo', JSON.stringify(savedList));
+    render();
+
 }
 
-const getFromLocalStorage = () => {
-    const todos = JSON.parse(localStorage.getItem('todo'))
-   // console.log(todos);
-    return todos
+const deleteTask = (id) => {
+    savedList = savedList.filter(task => task.id !== id);
+    localStorage.setItem('todo', JSON.stringify(savedList));
+    render();
 }
+
+// const getFromLocalStorage = () => {
+//     const todos = JSON.parse(localStorage.getItem('todo'))
+//    // console.log(todos);
+//     return todos
+// }

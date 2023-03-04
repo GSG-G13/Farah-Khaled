@@ -1,6 +1,6 @@
 const form = document.querySelector('form');
 const title = document.querySelector('#titleInput');
-const description = document.querySelector('#description');
+const description = document.querySelector('#descInput');
 
 const container = document.querySelector('.container')
 
@@ -19,24 +19,41 @@ function render(){
 
     savedList.forEach((item) =>{
         let li = document.createElement('li');
+
+        if(item.isDone){
+            li.classList.add('completed')
+        }
         let spanTitle = document.createElement('span');
         spanTitle.classList.add('title');
         let spanDesc = document.createElement('span');
         spanDesc.classList.add('desc')
         spanTitle.innerHTML = item.title;
+
+        let divBody = document.createElement('div');
+        divBody.classList.add('item-body')
         
         let deleteSpan = document.createElement('i');
         deleteSpan.classList.add('fa')
         deleteSpan.classList.add('fa-trash')
 
+        let updateSpan = document.createElement('i');
+        updateSpan.classList.add('fa-sharp');
+        updateSpan.classList.add('fa-solid');
+        updateSpan.classList.add('fa-pen');
+
         
         spanDesc.innerHTML = item.description;
         
-        li.appendChild(spanTitle);
-        li.appendChild(spanDesc);
+        divBody.appendChild(spanTitle);
+        divBody.appendChild(spanDesc);
+        li.appendChild(divBody);
+        li.appendChild(updateSpan);
         li.appendChild(deleteSpan);
+        
 
         deleteSpan.addEventListener("click", () => deleteTask(item.id))
+        updateSpan.addEventListener('click',()=> updateTask(item.id))
+        li.addEventListener('click',() => completeTask(item.id) )
 
         list.appendChild(li)
     })
@@ -84,8 +101,19 @@ const deleteTask = (id) => {
     render();
 }
 
-// const getFromLocalStorage = () => {
-//     const todos = JSON.parse(localStorage.getItem('todo'))
-//    // console.log(todos);
-//     return todos
-// }
+
+const updateTask = (id) =>{
+    let updatedTask = savedList.find(task => task.id == id);
+     title.value = updatedTask.title;
+     description.value = updatedTask.description;
+
+    deleteTask(id);
+}
+
+const completeTask = (id) => {
+   let completedTask =  savedList.find(item => item.id == id);
+    completedTask.isDone = !completedTask.isDone;
+     localStorage.setItem('todo', JSON.stringify(savedList));
+     render();
+}
+

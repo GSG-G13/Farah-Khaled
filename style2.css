@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body{
+    background: linear-gradient(35deg, #24435a, #00030e);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    
+}
+
+
+
+.container{
+    width : 70%;
+    max-width: 600px;
+    background-color: white;
+    margin: 40px auto;
+    padding : 30px;
+    border-radius: 20px;
+    
+}
+
+h1{
+    color: #24435a;
+    font-size: 32px;
+    text-align: center;
+    
+}
+
+.wrapper{
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+
+}
+
+input{
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px auto;
+    border: none;
+    box-shadow: 1px 1px 5px#24435a;
+    background-color: #eee;
+    font-size: 12px;
+}
+
+button{
+    width: 100%;
+    text-align: center;
+    margin: 12px auto;
+    background-color: #24435a;
+    color: white;
+    padding: 12px;
+    box-shadow: 7px 7px 8px #888;
+    border-radius: 8px;
+    border: none;
+}
+
+
+ul{
+    list-style-type: none;
+}
+
+.list-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+     
+}
+
+li{
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 4px 4px 12px #888;
+    margin-bottom: 12px;
+}
+
+.item-body{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+.title{
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.desc{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+i{
+    padding: 12px;
+    border-radius: 5px;
+    margin-left: 8px;
+    background-color: #ddd;
+    color: #24435a;
+}
+
+.completed{
+    background-color: green;
+    text-decoration: line-through;
+    color: white;
+    
+}
+
+@media (max-width: 600px) {
+    *{
+        font-size: 12;
+        font-family: sans-serif;
+    }
+
+    .container{
+        width: 95%;
+        
+    }
+}
+
+
+

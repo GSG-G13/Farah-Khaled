@@ -6,40 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List App in JavaScript</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style2.css">
     <meta name="viewport" content="width=device-width">
 </head>
 
 <body>
-    <h1>To-Do-list</h1>
-    <div class="wrapper">
-        <div class="task-input">
-            <form>
-                <input id="titleInput" type="text" placeholder="Add a new task title">
-                <textarea id="description" placeholder="add some description..."></textarea>
-                <button class="button" type="submit">Add</button>
-            </form>
+    <div class="container">
+        <h1>ToDo App</h1>
+        <div class="wrapper">
+            <div class="task-input">
+                <form>
+                    <input id="titleInput" type="text" placeholder="Add a new task title">
+                    <input id="descInput" type="text" placeholder="add some description...">
+                    <button class="button" type="submit">Add</button>
+                </form>
+            </div>
         </div>
-    </div>
-    <!-- <div class="controls">
-        <div class="filters">
-            <span class="active" id="all">All&nbsp;&nbsp; </span>
-            <span id="completed"> Completed</span>
-        </div>
-    </div> -->
+        <br><br>
+        
 
-    <div >
-        <p class="container"></p>
-        <ul id="todo-list">
-            <li>
-                <span class="title"> khaled
-                </span>
-                <span class="desc">dddddddddddd</span>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-                
-        </ul>
+        <div class="list-container">
+
+            <ul id="todo-list">
+                <div class="item-body">
+
+                </div>
+                    
+
+            </ul>
+        </div>
     </div>
+    
     <script src="app.js"></script>
 </body>
 
